@@ -16,12 +16,14 @@ def deep_dup(array)
 end
 
 def fibonacci(n)
-    result_arr = []
-    return [1] if n <= 2 && n > 0
-     next_num = [fibonacci(n-1) + fibonacci(n-2)]
-     result_arr + next_num
- result_arr
-end 
+    return [] if n <= 0
+    return [1] if n == 1
+    return [1, 1] if n == 2
+  
+    previous_numbers = fibonacci(n - 1)
+    previous_numbers << previous_numbers[-1] + previous_numbers[-2]
+  end
+  
 
 
-p fibonacci(5)
+p fibonacci(10)
