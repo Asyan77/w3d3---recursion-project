@@ -4,3 +4,10 @@ def range(start, ending)
 end
 
 p range(1,5)
+
+def exponent(base, num)
+    return 1 if num == 0
+    product = base * base
+    exponent(base, num-1)
+
+end
