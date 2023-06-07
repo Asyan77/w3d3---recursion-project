@@ -24,6 +24,25 @@ def fibonacci(n)
     previous_numbers << previous_numbers[-1] + previous_numbers[-2]
   end
   
+  def bsearch(array, target)
+    index = array.index(target)
+    return nil if index == nil
+    p index
+    # bsearch(array[0...index])
+  end
 
+  def merge_sort(array)
+   if array.length <= 1
+    merge(first, last)
+    return [] if array.length == 0
 
-p fibonacci(10)
+    mid_idx = array.length / 2 
+    first = merge_sort(array[0...mid_idx]) 
+    last = merge_sort(array[mid_idx..-1])
+    
+
+  end
+
+  def merge (first, last)
+    if 
+  end
