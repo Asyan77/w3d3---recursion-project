@@ -42,7 +42,15 @@ def fibonacci(n)
     merge_sort(first) + [pivot] + merge_sort(last)
   end
 
-  array = [4,3,8,19,55, 2]
-  p merge_sort(array)
+#   array = [4,3,8,19,55, 2]
+#   p merge_sort(array)
 
+  def subsets(array)
+    return [[]] if array.empty?
+    array1 = subsets(array[0...-1])
+    array1.concat(array1.map {|subarray| subarray + [array[-1]]})
+  end
+
+  array = [1,2,3]
+  p subsets(array)
 
