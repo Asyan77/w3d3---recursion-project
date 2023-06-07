@@ -15,9 +15,13 @@ def deep_dup(array)
     deep_dup(array[0...-1]) << array[-1].dup
 end
 
-array = [1,[2],3]
-array2 = deep_dup(array)
-array2[1] << 2
-p array
-p array2
+def fibonacci(n)
+    result_arr = []
+    return [1] if n <= 2 && n > 0
+     next_num = [fibonacci(n-1) + fibonacci(n-2)]
+     result_arr + next_num
+ result_arr
+end 
 
+
+p fibonacci(5)
