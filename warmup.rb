@@ -32,17 +32,17 @@ def fibonacci(n)
   end
 
   def merge_sort(array)
-   if array.length <= 1
-    merge(first, last)
+#    if array.length <= 1
+    # merge(first, last)
+#    end
     return [] if array.length == 0
-
-    mid_idx = array.length / 2 
-    first = merge_sort(array[0...mid_idx]) 
-    last = merge_sort(array[mid_idx..-1])
-    
-
+    pivot = array[0]
+    first = array[1..-1].select {|ele| ele < pivot}
+    last = array[1..-1].select {|ele| ele > pivot}
+    merge_sort(first) + [pivot] + merge_sort(last)
   end
 
-  def merge (first, last)
-    if 
-  end
+  array = [4,3,8,19,55, 2]
+  p merge_sort(array)
+
+
