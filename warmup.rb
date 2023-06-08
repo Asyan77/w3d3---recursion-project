@@ -51,6 +51,20 @@ def fibonacci(n)
     array1.concat(array1.map {|subarray| subarray + [array[-1]]})
   end
 
-  array = [1,2,3]
-  p subsets(array)
+  def perm(array)
+    return array if array.length <=1
+    result = []
+    array.each_with_index do |element, index|
+        remaining = array[0...index] + array[(index + 1)..-1]
+        sub_permutations = permutations(remaining)
+  end
 
+
+  def factorial(n)
+    return 1 if n <= 1
+  
+    n * factorial(n - 1)
+  end
+
+array = [1,2,3]
+p perm(array)
